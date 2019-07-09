@@ -1,0 +1,18 @@
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install software-properties-common
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt-get update
+
+sudo apt install python3.7
+sudo apt install python3-pip
+python3.7 --version
+
+git clone https://github.com/RasaHQ/rasa.git
+cd rasa
+pip install -r requirements.txt
+pip install -e .
+
+cd
+git clone https://github.com/jjoc007/rasa-api-ud.git
+cd rasa-api-ud
