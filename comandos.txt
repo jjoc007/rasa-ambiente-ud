@@ -1,17 +1,20 @@
 sudo apt-get update
-sudo apt-get upgrade
-sudo apt install software-properties-common
+sudo apt-get upgrade -y
+sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt-get update
 
-sudo apt install python3.7
-sudo apt install python3-pip
-python3.7 --version
+sudo apt install -y python3.7 python3-pip
 
 git clone https://github.com/RasaHQ/rasa.git
 cd rasa
-pip install -r requirements.txt
-pip install -e .
+sudo pip3 install -r requirements.txt
+sudo pip3 install -e .
+
+sudo pip3 install rasa[spacy]
+python3 -m spacy download en_core_web_md
+python3 -m spacy link en_core_web_md en
+pip3 install rasa-x --extra-index-url https://pypi.rasa.com/simple
 
 cd
 git clone https://github.com/jjoc007/rasa-api-ud.git
